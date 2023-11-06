@@ -9,6 +9,14 @@ require('telescope').setup {
   },
 }
 
+-- custom find all files so that gitignored .env files can be searched for
+find_all_including_hidden_and_gitignored = function()
+  require("telescope.builtin").find_files {
+    find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden', '--no-ignore'},
+    previewer = false
+  }
+end
+
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 
@@ -23,8 +31,9 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
-vim.keymap.set('n', '<leader>af', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>sf', require("telescope.builtin").find_files, { desc = '[S]earch [F]iles' }) 
+vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
+vim.keymap.set('n', '<leader>af', find_all_including_hidden_and_gitignored, { desc = '[A]ll [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })

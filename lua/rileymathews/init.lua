@@ -1,3 +1,7 @@
 require("rileymathews.remap")
 require("rileymathews.lazy")
+require("rileymathews.telescopesetup")
+require("rileymathews.treesittersetup")
+require("rileymathews.lspsetup")
+require("rileymathews.theme")
 print("hello from rileymathews")

@@ -1,5 +1,0 @@
-vim.keymap.set('n', '<leader>ah', require("harpoon.mark").add_file(), { desc = '[A]dd to [H]arpoon' })
-vim.keymap.set('n', '<leader>1', require("harpoon.ui").nav_file(1), { desc = 'Open Harpoon File [1]' })
-vim.keymap.set('n', '<leader>2', require("harpoon.ui").nav_file(2), { desc = 'Open Harpoon File [2]' })
-vim.keymap.set('n', '<leader>3', require("harpoon.ui").nav_file(3), { desc = 'Open Harpoon File [3]' })
-vim.keymap.set('n', '<leader>4', require("harpoon.ui").nav_file(4), { desc = 'Open Harpoon File [4]' })

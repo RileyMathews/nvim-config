@@ -76,6 +76,14 @@ local servers = {
             telemetry = { enable = false },
         },
     },
+    pylsp = {
+        plugins = {
+            ruff = {
+                enabled = true,
+                extendSelect = { "I" },
+            }
+        }
+    }
 }
 
 -- Setup neovim lua configuration

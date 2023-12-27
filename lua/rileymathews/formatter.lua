@@ -40,8 +40,7 @@ require("formatter").setup {
     },
 
     python = {
-        require("formatter.filetypes.python").black,
-        require("formatter.filetypes.python").isort
+        require("formatter.filetypes.python").ruff
     },
 
     -- Use the special "*" filetype for defining formatter configurations on

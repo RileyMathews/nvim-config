@@ -6,7 +6,7 @@ require("formatter").setup {
   -- Enable or disable logging
   logging = true,
   -- Set the log level
-  log_level = vim.log.levels.WARN,
+  log_level = vim.log.levels.DEBUG,
   -- All formatter configurations are opt-in
   filetype = {
     -- Formatter configurations for filetype "lua" go here
